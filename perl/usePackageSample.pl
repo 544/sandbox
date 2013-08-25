@@ -1,5 +1,6 @@
+#!/usr/bin/perl
+
 use sample::Util
 
-hello();
+Util::hello();
 
-0;
