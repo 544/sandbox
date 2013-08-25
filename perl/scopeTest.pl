@@ -20,7 +20,7 @@ print "\n";
 
 # localで変数を再宣言して表示
 sub func1 {
-	# ダイナミック変数なので一時的にグローバル変数の中身を買える。
+	# ダイナミック変数なので一時的にパッケージ変数の中身を買える。
 	local $var = "dinamic val\n";
 	print "func:" . $var;
 	# ダイナミック変数なのでinnerfuncの中でも有効
