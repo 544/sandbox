@@ -32,7 +32,16 @@ my @state = ( [ "","","" ], ["","",""], ["", "", ""] );
 for(;;) {
 
 	debug (9,9,$i++);
+	debug (10,10,$state[0][1]);
 	
+	# 状態チェック
+	if (check(0,0) || check(0,1) || check(0,2)) {
+		print "00:" . check(0,0) . " 01:" . check(0,1) . " 02:" . check(0,2) . "\n";
+		die "clear";
+	} else {
+		debug (11,9,$state[0][0] . $state[0][1] . $state[0][2] );
+	}
+
 	my($R, $U, $V, $Z, $S, $T);
 
     # 標準入力 (1) から 0.01 秒内に入力があるかチェックする。
@@ -67,10 +76,40 @@ for(;;) {
 		last "good by!";
 	}
 
-	# 状態チェック
-	if ($state[0][0] != "" && $state[0][0] == $state[0][1] && $state[0][1] == $state[0][2] ) {
-		die "clear";
+}
+
+# 盤上のチェック
+sub check {
+
+	my $i = shift;
+	my $j = shift;
+
+	my $true = 1;
+	my $false = undef;
+	if ($state[$i][$j] eq "") {
+		# 未入力ならfalse;
+		return $false;
 	}
+
+	my $checklen = 3;
+	my $data = $state[$i][$j];
+	
+	# 横チェック
+	if ( $date eq $state[$i][$j+1] && $date eq $state[$i][$j+2] ) {
+		print "134" . $date . "\n";
+		return $true;
+	}
+	if ( $date eq $state[$i+1][$j] && $date eq $state[$i+2][$j] ) {
+		return $true;
+	}
+	if ( $date eq $state[$i+1][$j+1] && $date eq $state[$i+2][$j+2] ) {
+		return $true;
+	}
+	if ( $date eq $state[$i-1][$j-1] && $date eq $state[$i-2][$j-2] ) {
+		return $true;
+	}
+	return $false;
+
 }
 
 sub debug {
