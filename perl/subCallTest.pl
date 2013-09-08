@@ -1,4 +1,9 @@
 #!/usr/bin/perl
 
-print "sub module call test!!!";
+use strict;
+use SubCallModule;
+
+print "sub module call test!!!\n";
+
+print SubCallModule::submodule;
 
