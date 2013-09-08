@@ -2,7 +2,7 @@ package SubCallModule;
 
 use strict;
 
-sub submodule {
+sub doSomething {
 	my @param = @_;
 
 	return "called!";

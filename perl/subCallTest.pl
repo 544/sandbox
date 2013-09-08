@@ -5,5 +5,5 @@ use SubCallModule;
 
 print "sub module call test!!!\n";
 
-print SubCallModule::submodule;
+print SubCallModule::doSomething;
 
