@@ -5,7 +5,7 @@ use strict;
 sub doSomething {
 	my @param = @_;
 
-	# $BLa$jCMMQ$NL5L>%O%C%7%e(B
+	# 戻り値用に空ハッシュを作成する。
 	my $result = {};
 
 	$result -> {success} = undef;

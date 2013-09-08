@@ -1,5 +1,7 @@
 #!/usr/bin/perl
 
+# 呼ばれる用サブモジュールのサンプル
+
 use strict;
 use Data::Dumper;
 
