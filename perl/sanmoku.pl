@@ -32,11 +32,10 @@ my @state = ( [ "","","" ], ["","",""], ["", "", ""] );
 for(;;) {
 
 	debug (9,9,$i++);
-	debug (10,10,$state[0][1]);
+	debug (11,10,$x . $y);
 	
 	# 状態チェック
-	if (check(0,0) || check(0,1) || check(0,2)) {
-		print "00:" . check(0,0) . " 01:" . check(0,1) . " 02:" . check(0,2) . "\n";
+	if (check(@state)) {
 		die "clear";
 	} else {
 		debug (11,9,$state[0][0] . $state[0][1] . $state[0][2] );
@@ -81,33 +80,34 @@ for(;;) {
 # 盤上のチェック
 sub check {
 
-	my $i = shift;
-	my $j = shift;
+	my @state = shift;
 
 	my $true = 1;
 	my $false = undef;
-	if ($state[$i][$j] eq "") {
-		# 未入力ならfalse;
-		return $false;
+
+	# 横
+	foreach my $x (0 .. 2) {
+		if ($state[$x][0] eq "" ) {
+			next;
+		}
+		debug (22,22,$x);
+
+		if ($state[$x][0] eq $state[$x][1]
+				and $state[$x][0] eq $state[$x][2] ) {
+			return $true;
+		}
+	}
+	# 縦
+	foreach my $y (0 .. 2) {
+		if ($state[0][$y] eq "" ) {
+			next;
+		}
+		if ($state[0][$y] eq $state[1][$y]
+				and $state[0][$y] eq $state[2][$y] ) {
+			return $true;
+		}
 	}
 
-	my $checklen = 3;
-	my $data = $state[$i][$j];
-	
-	# 横チェック
-	if ( $date eq $state[$i][$j+1] && $date eq $state[$i][$j+2] ) {
-		print "134" . $date . "\n";
-		return $true;
-	}
-	if ( $date eq $state[$i+1][$j] && $date eq $state[$i+2][$j] ) {
-		return $true;
-	}
-	if ( $date eq $state[$i+1][$j+1] && $date eq $state[$i+2][$j+2] ) {
-		return $true;
-	}
-	if ( $date eq $state[$i-1][$j-1] && $date eq $state[$i-2][$j-2] ) {
-		return $true;
-	}
 	return $false;
 
 }
