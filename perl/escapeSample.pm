@@ -6,38 +6,38 @@ package main;
 
 # クリア : Esc[2J
 sub clearConsole {
-	printf("\e[2J");
+    printf("\e[2J");
 }
 
 # 移動 : Esc[0;0H  (ただし、0;0 は座標)
 sub moveCursor {
-	$x = shift;
-	$y = shift;
-	printf("\e[%s;%sH",$x,$y);
+    $x = shift;
+    $y = shift;
+    printf( "\e[%s;%sH", $x, $y );
 }
 
 # 上移動 : Esc[0A  (ただし、0 は移動数)
 sub up {
-	$n = shift || 1;
-	printf("\e[%sA", $n);
+    $n = shift || 1;
+    printf( "\e[%sA", $n );
 }
 
 # 下移動 : Esc[0B  (ただし、0 は移動数)
 sub down {
-	$n = shift || 1;
-	printf("\e[%sB", $n);
+    $n = shift || 1;
+    printf( "\e[%sB", $n );
 }
 
 # 右移動 : Esc[0C  (ただし、0 は移動数)
 sub right {
-	$n = shift || 1;
-	printf("\e[%sC", $n);
+    $n = shift || 1;
+    printf( "\e[%sC", $n );
 }
 
 # 左移動 : Esc[0D  (ただし、0 は移動数)
 sub left {
-	$n = shift || 1;
-	printf("\e[%sD", $n);
+    $n = shift || 1;
+    printf( "\e[%sD", $n );
 }
 
 # 文字色 : Esc[30m  (ただし、0 はカラーコード)
@@ -50,19 +50,19 @@ sub left {
 # 6 : シアン
 # 7 : 白
 sub setColor {
-	$n = "3" . shift || "0";
-	printf("\e[%sm", $n);
+    $n = "3" . shift || "0";
+    printf( "\e[%sm", $n );
 }
 
 # 背景色 : Esc[40m  (ただし、0 はカラーコード)
 sub setBgColor {
-	$n = "4" . shift || "0";
-	printf("\e[%sm", $n);
+    $n = "4" . shift || "0";
+    printf( "\e[%sm", $n );
 }
 
 # 文字色・背景色のリセット : Esc[0m
 sub resetColor {
-	printf("\e[0m");
+    printf("\e[0m");
 }
 
 1;
