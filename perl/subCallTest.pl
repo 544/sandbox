@@ -1,4 +1,5 @@
 #!/usr/bin/perl
+use lib 'pm';
 
 # 呼ばれる用サブモジュールのサンプル
 
