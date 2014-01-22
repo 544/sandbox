@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Foo	Override.pl	/^package Foo;$/;"	p
+SubCallModule	pm/subCallModule.pm	/^package SubCallModule;$/;"	p
+Util	pm/Util.pm	/^package Util;$/;"	p
+check	sanmoku.pl	/^sub check {$/;"	s
+clearConsole	pm/escapeSample.pm	/^sub clearConsole {$/;"	s
+debug	sanmoku.pl	/^sub debug {$/;"	s
+doSomething	pm/subCallModule.pm	/^sub doSomething {$/;"	s
+do_something	Override.pl	/^sub do_something {$/;"	s
+down	pm/escapeSample.pm	/^sub down {$/;"	s
+func1	scopeTest.pl	/^sub func1 {$/;"	s
+func2	scopeTest.pl	/^sub func2 {$/;"	s
+func3	scopeTest.pl	/^sub func3 {$/;"	s
+hello	pm/Util.pm	/^sub hello {$/;"	s
+innerfunc	scopeTest.pl	/^sub innerfunc {$/;"	s
+left	pm/escapeSample.pm	/^sub left {$/;"	s
+main	Override.pl	/^package main;$/;"	p
+main	pm/escapeSample.pm	/^package main;$/;"	p
+moveCursor	pm/escapeSample.pm	/^sub moveCursor {$/;"	s
+resetColor	pm/escapeSample.pm	/^sub resetColor {$/;"	s
+right	pm/escapeSample.pm	/^sub right {$/;"	s
+setBgColor	pm/escapeSample.pm	/^sub setBgColor {$/;"	s
+setColor	pm/escapeSample.pm	/^sub setColor {$/;"	s
+up	pm/escapeSample.pm	/^sub up {$/;"	s
