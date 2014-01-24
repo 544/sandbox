@@ -1,3 +1,4 @@
+# perlのバージョンによってはスレッドが使えない
 use Config;
 $Config{useithreads} || die('Recompile Perl with threads to run this program.');
 
@@ -7,6 +8,7 @@ use warnings;
 use threads;
 use Thread::Queue;
 
+# 素数を探すプログラム
 sub check_num { 
 	my ($upstream, $cur_prime) = @_;
 	my $kid;
