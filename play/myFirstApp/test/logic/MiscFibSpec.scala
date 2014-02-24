@@ -9,9 +9,7 @@ class MiscFibSpec extends script.Specification with Grouped {
    + a(1)  は 1      ${Misc.fib(1) === 1}
    + a(2)  は 1      ${Misc.fib(2) === 1}
    + a(3)  は 2      ${Misc.fib(3) === 2}
-   + a(4)  は 3      ${Misc.fib(4) === 3}
-   + a(10) は 55     ${Misc.fib(10) === 55}
-   + a(30) は 832040 ${Misc.fib(30) === 832040}
+   + a(40) は 832040 ${Misc.fib(40) === 102334155}
   """
 
 }
