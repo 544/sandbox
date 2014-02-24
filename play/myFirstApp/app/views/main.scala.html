@@ -6,10 +6,63 @@
     <head>
         <title>@title</title>
         <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/corderTable.css")">
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
         <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
     </head>
     <body>
-        @content
+
+		<div id="wrapper">
+			<div id="header">
+				<p class="logo">
+					<a href="index.html">*** 544's Examples ***</a>
+				</p>
+				<!-- 概要 -->
+				<p class="description">検証実装あれこれ</p>
+			</div>
+			<!-- / header end -->
+			<div id="globalnavi">
+				<!-- グローバルナビゲーション -->
+				<ul>
+					<li><a href="main.html">Top</a></li>
+				</ul>
+			</div>
+			<!-- / globalnavi end -->
+			<div id="container">
+				<div id="contents">
+					<!-- コンテンツ -->
+					@content
+				</div>
+				<!-- / contents end -->
+			</div>
+			<!-- / container end -->
+
+			<div id="sidebar">
+				<!-- サイドバー ここから -->
+				<p class="sidetitle">ツール的な</p>
+				<ul class="localnavi">
+					<li><a href="#">*** リンク ***</a></li>
+				</ul>
+
+				<p class="sidetitle">あれこれ</p>
+				<ul class="localnavi">
+					<li><a href="#">*** リンク ***</a></li>
+					<li><a href="#">*** リンク ***</a></li>
+					<li><a href="#">*** リンク ***</a></li>
+					<li><a href="#">*** リンク ***</a></li>
+				</ul>
+				<!-- サイドバー ここまで -->
+			</div>
+			<!-- / sidebar end -->
+			<div id="footer">
+				<!-- コピーライト -->
+				<p>Copyright, Nothing All Rights Reserved.</p>
+				<p id="cds">
+					CSS Template <a href="http://www.css-designsample.com/">CSSデザインサンプル</a>
+				</p>
+			</div>
+			<!-- / footer end -->
+		</div>
+		<!-- / wrapper end -->
     </body>
 </html>

@@ -2,11 +2,13 @@ package controllers
 
 import play.api._;
 import play.api.mvc._;
+import logic._;
 
 object Foo extends Controller {
 
   def index = Action {
-    Ok(views.html.foo("変数"));
+    val helloLogic = new logic.HelloWorld();
+    Ok(views.html.foo(helloLogic.helloworld("tarou")));
   }
 
   def add = Action {
