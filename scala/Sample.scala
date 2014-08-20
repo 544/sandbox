@@ -26,11 +26,14 @@ object Sample extends App {
 
 
   // ボトムアップ型のナップサック問題解法。Gold取得のｓ最適値をだす。
-  val solved = new Array[Int](target+1);
-  for (ap <- 1 to target) {
+  val solved = new Array[(Int,List[(Int,String,Int,Int)])](target+1);
+  for (ap <- 0 to target) {
     solved(ap) = qlist.map {
-      g => if (ap < g._3) 0 else solved(ap - g._3) + g._4
-    }.reduceLeft((a:Int,b:Int) => Math.max(a,b))
+      g => if (ap < g._3) (0, Nil)
+      // ここのg._4(=Gold)が評価対象。この最大を求めようとする。
+           else ((solved(ap - g._3))._1 + g._4, solved(ap - g._3)._2 :+ g)
+         }.reduceLeft( (a,b) =>
+           if (a._1 > b._1) a else b )
   };
 
   // 表示してみる。
