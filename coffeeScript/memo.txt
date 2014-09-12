@@ -1,0 +1,9 @@
+CoffeeScriptインストールめも
+
+npm install coffee-script
+
+パス追加する。
+
+node.js入れる。
+
+
