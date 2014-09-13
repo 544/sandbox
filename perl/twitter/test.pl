@@ -2,7 +2,7 @@
 
 use strict;
 use warnings;
-use Net::Twitter::Lite::WithAPIv1_1;
+use Net::Twitter;
 use Data::Dumper;
 use utf8;
 use Encode;
@@ -21,12 +21,13 @@ my %CONSUMER_TOKENS = (
 	legacy_lists_api=>0,
 );
 
+__END__
 #API生成
 #NOTE これがないと
 # 500: Can't verify SSL peers without knowing which Certificate Authorities to trust
 # でエラー
 $ENV{'PERL_LWP_SSL_VERIFY_HOSTNAME'} = 0;
-my $twi = Net::Twitter::Lite::WithAPIv1_1->new(%CONSUMER_TOKENS);
+my $twi = Net::Twitter->new(%CONSUMER_TOKENS);
 
 my $search_str = "ガンロワ";
 my $res = $twi->search(
