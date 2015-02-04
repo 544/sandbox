@@ -23,11 +23,14 @@ my $nt = Net::Twitter::Lite::WithAPIv1_1->new(
 $nt->access_token($access_token);
 $nt->access_token_secret($access_token_secret);
 
+=pod
+# id で検索
 eval {
     my $id = "489446951184654337";
     my $res = $nt->get_oembed({id => $id});
     print $res->{html} if exists $res->{html};
 };
+=cut
 if ($@) {
     print Dumper $@;
 }
